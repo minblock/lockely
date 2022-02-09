@@ -71,8 +71,8 @@ public:
     CMainParams() {
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 840000;
-        consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("c913a92617bc0a940be4f4c2fc337de5ffdd6a1298dddf4043236a7787c1c1b1");
+        consensus.BIP34Height = 0
+        consensus.BIP34Hash = uint256S();
         consensus.BIP65Height = 0; // bab3041e8977e0dc3eeff63fe707b92bde1dd449d8efafb248c27c8264cc311a
         consensus.BIP66Height = 0; // 7aceee012833fa8952f8835d8b1b3ae233cd6ab08fdb27a771d2bd7bdc491894
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
@@ -100,7 +100,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xc913a92617bc0a940be4f4c2fc337de5ffdd6a1298dddf4043236a7787c1c1b1"); //1
+        consensus.defaultAssumeValid = uint256S("0x00"); //1
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -119,16 +119,9 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0xc913a92617bc0a940be4f4c2fc337de5ffdd6a1298dddf4043236a7787c1c1b1"));
         assert(genesis.hashMerkleRoot == uint256S("0x2fd2ed2819e593d35a11c9a9a641cf8dab2ebef85b6617bf5d9e26792f3f5658"));
 
-        // Note that of those with the service bits flag, most only support a subset of possible options
-        //vSeeds.push_back(CDNSSeedData("loshan.co.uk", "seed-a.lockely.loshan.co.uk", true));
-        //vSeeds.push_back(CDNSSeedData("thrasher.io", "dnsseed.thrasher.io", true));
-        //vSeeds.push_back(CDNSSeedData("lockelytools.com", "dnsseed.lockelytools.com"));
-        //vSeeds.push_back(CDNSSeedData("lockelypool.org", "dnsseed.lockelypool.org"));
-        //vSeeds.push_back(CDNSSeedData("koin-project.com", "dnsseed.koin-project.com"));
-
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,139);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,77); //lockelyaddresses will begin with an X or a Y
-        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,47); //Lockely segwit addresses will begin with a L or a K
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
+        base58Prefixes[SCRIPT_ADDRESS2] = std::vector<unsigned char>(1,50);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,176);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
@@ -142,7 +135,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (721000, uint256S("0x198a7b4de1df9478e2463bd99d75b714eab235a2e63e741641dc8a759a9840e5"))
+            (0, uint256S("0xc913a92617bc0a940be4f4c2fc337de5ffdd6a1298dddf4043236a7787c1c1b1"))
         };
 
         chainTxData = ChainTxData{
