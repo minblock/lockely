@@ -215,7 +215,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1296688602;
-        genesis.nNonce = 1
+        genesis.nNonce = 1;
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x2295a7143f99232ea21ed69f6c4eac277b2c80f9801ac4379dfb4a3b511a6ff6"));
 
