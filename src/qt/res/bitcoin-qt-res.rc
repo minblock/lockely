@@ -19,14 +19,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Lockely"
-            VALUE "FileDescription",    PACKAGE_NAME " (GUI node for Lockely)"
+            VALUE "CompanyName",        "Lockelycoin"
+            VALUE "FileDescription",    "Lockelycoin Core (OSS GUI client for Lockelycoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "lockely-qt"
+            VALUE "InternalName",       "lockelycoin-qt"
             VALUE "LegalCopyright",     COPYRIGHT_STR
-            VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "lockely-qt.exe"
-            VALUE "ProductName",        PACKAGE_NAME
+            VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
+            VALUE "OriginalFilename",   "lockelycoin-qt.exe"
+            VALUE "ProductName",        "Lockelycoin Core"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

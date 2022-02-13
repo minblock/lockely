@@ -1,5 +1,5 @@
-// Copyright (c) 2011-2016 The Bitcoin Core developers
-// Distributed under the MIT software license, see the accompanying
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "bitcoinunits.h"
@@ -36,6 +36,17 @@ bool BitcoinUnits::valid(int unit)
     }
 }
 
+QString BitcoinUnits::id(int unit)
+{
+    switch(unit)
+    {
+    case BTC: return QString("ltc");
+    case mBTC: return QString("mltc");
+    case uBTC: return QString("ultc");
+    default: return QString("???");
+    }
+}
+
 QString BitcoinUnits::name(int unit)
 {
     switch(unit)
@@ -51,9 +62,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Lockelys");
-    case mBTC: return QString("Milli-Lockelys (1 / 1" THIN_SP_UTF8 "000)");
-    case uBTC: return QString("Micro-Lockelys (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+    case BTC: return QString("Lockelycoins");
+    case mBTC: return QString("Milli-Lockelycoins (1 / 1" THIN_SP_UTF8 "000)");
+    case uBTC: return QString("Micro-Lockelycoins (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
     default: return QString("???");
     }
 }
@@ -110,6 +121,13 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     return quotient_str + QString(".") + remainder_str;
 }
 
+
+// TODO: Review all remaining calls to BitcoinUnits::formatWithUnit to
+// TODO: determine whether the output is used in a plain text context
+// TODO: or an HTML context (and replace with
+// TODO: BtcoinUnits::formatHtmlWithUnit in the latter case). Hopefully
+// TODO: there aren't instances where the result could be used in
+// TODO: either context.
 
 // NOTE: Using formatWithUnit in an HTML context risks wrapping
 // quantities at the thousands separator. More subtly, it also results

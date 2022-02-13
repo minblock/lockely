@@ -1,0 +1,11 @@
+[Protocol]
+exec=lockelycoin-qt '%u'
+protocol=lockelycoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false
