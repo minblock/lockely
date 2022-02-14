@@ -1,9 +1,9 @@
-Lockely Core 0.14.2
-=====================
+Lockelycoin Core
+=============
 
 Intro
 -----
-Lockely is a free open source peer-to-peer electronic cash system that is
+Lockelycoin is a free open source peer-to-peer electronic cash system that is
 completely decentralized, without the need for a central server or trusted
 parties.  Users hold the crypto keys to their own money and transact directly
 with each other, with the help of a P2P network to check for double-spending.
@@ -11,13 +11,13 @@ with each other, with the help of a P2P network to check for double-spending.
 
 Setup
 -----
-Unpack the files into a directory and run lockely-qt.exe.
+Unpack the files into a directory and run lockelycoin-qt.exe.
 
-Lockely Core is the original Lockely client and it builds the backbone of the network.
-However, it downloads and stores the entire history of Lockely transactions;
+Lockelycoin Core is the original Lockelycoin client and it builds the backbone of the network.
+However, it downloads and stores the entire history of Lockelycoin transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
-See the lockely wiki at:
-  https://lockely.info/
+See the lockelycoin wiki at:
+  https://lockelycoin.info/
 for more help and information.

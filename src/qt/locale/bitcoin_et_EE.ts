@@ -130,12 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Lockely</source>
-        <translation>Lockely</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Rahakott</translation>
+        <source>Lockelycoin</source>
+        <translation>Lockelycoin</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -257,20 +253,16 @@
         <source>Command-line options</source>
         <translation>Käsurea valikud</translation>
     </message>
-    <message>
-        <source>Usage:</source>
-        <translation>Kasutus:</translation>
-    </message>
-    <message>
-        <source>command-line options</source>
-        <translation>käsurea valikud</translation>
-    </message>
-    </context>
+</context>
 <context>
     <name>Intro</name>
     <message>
         <source>Welcome</source>
         <translation>Tere tulemast</translation>
+    </message>
+    <message>
+        <source>Lockelycoin</source>
+        <translation>Lockelycoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -288,10 +280,6 @@
     <message>
         <source>Options</source>
         <translation>Valikud</translation>
-    </message>
-    <message>
-        <source>MB</source>
-        <translation>MB</translation>
     </message>
     <message>
         <source>&amp;Network</source>
@@ -312,6 +300,10 @@
     <message>
         <source>&amp;OK</source>
         <translation>&amp;OK</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Viga</translation>
     </message>
     </context>
 <context>
@@ -334,7 +326,15 @@
     </context>
 <context>
     <name>PeerTableModel</name>
-    </context>
+    <message>
+        <source>Sent</source>
+        <translation>Saadetud</translation>
+    </message>
+    <message>
+        <source>Received</source>
+        <translation>Vastu võetud</translation>
+    </message>
+</context>
 <context>
     <name>QObject</name>
     <message>
@@ -492,6 +492,10 @@
         <source>Message</source>
         <translation>Sõnum</translation>
     </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Rahakott</translation>
+    </message>
     </context>
 <context>
     <name>RecentRequestsTableModel</name>
@@ -521,14 +525,6 @@
     <message>
         <source>Choose...</source>
         <translation>Vali...</translation>
-    </message>
-    <message>
-        <source>normal</source>
-        <translation>normaalne</translation>
-    </message>
-    <message>
-        <source>fast</source>
-        <translation>kiire</translation>
     </message>
     <message>
         <source>Copy amount</source>
@@ -733,6 +729,9 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
+    <name>WalletController</name>
+    </context>
+<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -756,12 +755,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Options:</source>
-        <translation>Valikud:</translation>
-    </message>
-    <message>
-        <source>Lockely Core</source>
-        <translation>Lockely Core</translation>
+        <source>Lockelycoin Core</source>
+        <translation>Lockelycoin Core</translation>
     </message>
     <message>
         <source>Information</source>
