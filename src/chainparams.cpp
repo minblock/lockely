@@ -91,24 +91,24 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1678619052; // Sun March 12,  2023
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000061eac8c87c");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00"); //1683528
+        consensus.defaultAssumeValid = uint256S("0x81404e610129a226fc68cd0316fc412023e93f60abf0c24953d8192b7903c2a8"); //13140
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[0] = 0xb3;
+        pchMessageStart[1] = 0xdc;
+        pchMessageStart[2] = 0xad;
+        pchMessageStart[3] = 0xcd;
         nDefaultPort = 11011;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 0;
-        m_assumed_chain_state_size = 0;
+        m_assumed_blockchain_size = 17;
+        m_assumed_chain_state_size = 1;
 
         genesis = CreateGenesisBlock(1644793574, 786474, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -129,7 +129,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "ltc";
+        bech32_hrp = "lkc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -139,15 +139,17 @@ public:
 
         checkpointData = {
             {
-                {721000, uint256S("0x198a7b4de1df9478e2463bd99d75b714eab235a2e63e741641dc8a759a9840e5")},
+                {1337, uint256S("0xa004c394c9cf876e23981334e1c979fab596b320ceb855048c357733e8751322")},
+                {13140, uint256S("0x81404e610129a226fc68cd0316fc412023e93f60abf0c24953d8192b7903c2a8")},
+                {13144, uint256S("0xc33a116215251d7ae3826e30f5636e485beae5b9d9be95956a67a80e06cd57d4 ")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 2cdba8c47858d34cf0e02dfb8733263a3ed8705b1663ec7c158783d77b93e7ee
             /* nTime    */ 1565379143,
-            /* nTxCount */ 36299075,
-            /* dTxRate  */ 0.388813310286546
+            /* nTxCount */ 13141,
+            /* dTxRate  */ 1.6546
         };
 
         /* disable fallback fee on mainnet */
@@ -223,7 +225,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tltc";
+        bech32_hrp = "tlkc";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 
@@ -327,7 +329,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "rltc";
+        bech32_hrp = "rlkc";
 
         /* enable fallback fee on regtest */
         m_fallback_fee_enabled = true;
