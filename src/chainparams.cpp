@@ -91,12 +91,12 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1678619052; // Sun March 12,  2023
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000061eac8c87c");
-
-        // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x81404e610129a226fc68cd0316fc412023e93f60abf0c24953d8192b7903c2a8"); //13140
-
-        /**
+        consensus.nMinimumChainWork = uint256S("0x00");
+	//
+	//                 // By default assume that the signatures in ancestors of this block are valid.
+        consensus.defaultAssumeValid = uint256S("0x00");
+  
+       	 /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
@@ -112,8 +112,8 @@ public:
 
         genesis = CreateGenesisBlock(1644793574, 786474, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0Xcf4631b736baccef8690cc7f3b0201698199b1b1252fbd60ac585e1afbd5ce1d"));
-        assert(genesis.hashMerkleRoot == uint256S("0X28eea7b503f6c92566bd34ca2ea1814b21d9cdc121baddbc418dabf6c24f12e4"));
+        assert(consensus.hashGenesisBlock == uint256S("cf4631b736baccef8690cc7f3b0201698199b1b1252fbd60ac585e1afbd5ce1d"));
+        assert(genesis.hashMerkleRoot == uint256S("28eea7b503f6c92566bd34ca2ea1814b21d9cdc121baddbc418dabf6c24f12e4"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -139,9 +139,8 @@ public:
 
         checkpointData = {
             {
-                {1337, uint256S("0xa004c394c9cf876e23981334e1c979fab596b320ceb855048c357733e8751322")},
-                {13140, uint256S("0x81404e610129a226fc68cd0316fc412023e93f60abf0c24953d8192b7903c2a8")},
-                {13144, uint256S("0xc33a116215251d7ae3826e30f5636e485beae5b9d9be95956a67a80e06cd57d4 ")},
+                {1337, uint256S("a004c394c9cf876e23981334e1c979fab596b320ceb855048c357733e8751322")},
+		{13281, uint256S("a182fa5e5432aeb5446073fe918332c4d52b452d4a9d19dfe63dc24825c0cf82")},
             }
         };
 
@@ -153,7 +152,7 @@ public:
         };
 
         /* disable fallback fee on mainnet */
-        m_fallback_fee_enabled = false;
+        m_fallback_fee_enabled = true;
     }
 };
 
@@ -197,10 +196,10 @@ public:
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xf19dfbdc0e6c399ef45d315d89fc3e972dd8da74503252bacaf664f64d86e6f6"); //1174621
 
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xd2;
-        pchMessageStart[2] = 0xc8;
-        pchMessageStart[3] = 0xf1;
+        pchMessageStart[0] = 0xfb; //fbc0b6db 
+        pchMessageStart[1] = 0xc0;
+        pchMessageStart[2] = 0xb6;
+        pchMessageStart[3] = 0xdb;
         nDefaultPort = 12000;
         nPruneAfterHeight = 1000;
         m_assumed_blockchain_size = 2;
